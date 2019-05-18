@@ -109,27 +109,28 @@ function sendXXdaysReminder(numberOfDays,rowEmailSendPosition) {
     var dataValid = row[8]; // second column
     var emailSent = row[rowEmailSendPosition];
     
-    if(dataValid=="")
+    if(row[6]=="")
       return;
     
-    var tempDiff = numDaysBetween(dataValid, dateToday);
+    if(dataValid != "")
+    { 
+      var tempDiff = numDaysBetween(dataValid, dateToday);
     
-   if (tempDiff <= numberOfDays && tempDiff > 0 && emailSent != EMAIL_SENT) {
-      
-     
+     if (tempDiff <= numberOfDays && tempDiff > 0 && emailSent != EMAIL_SENT) {  
       var dataValidFormatted = getFormattedDate(dataValid); 
 
       var message = createMail(dataValidFormatted);
       var subject = 'Wygasająca składka członkowska ESN Polska';
      
-     MailApp.sendEmail({
-       to: emailAddress,
-       subject: subject,
-       htmlBody: message,
-     });     
-      sheet.getRange(startRow + parseInt(i), rowEmailSendPosition+1).setValue(EMAIL_SENT);
-      // Make sure the cell is updated right away in case the script is interrupted
-      SpreadsheetApp.flush();
+       MailApp.sendEmail({
+         to: emailAddress,
+         subject: subject,
+         htmlBody: message,
+       });     
+        sheet.getRange(startRow + parseInt(i), rowEmailSendPosition+1).setValue(EMAIL_SENT);
+        // Make sure the cell is updated right away in case the script is interrupted
+        SpreadsheetApp.flush();
+      }  
     }
   }
 }
