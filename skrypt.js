@@ -81,11 +81,11 @@ function createMail(dataValid) {
 
   var htmlIloscDni =  
     '<body>' + 
-      '<p> Cześć, <p>' +
+      '<p> Cześć, <br/>' +
       '<p> Jeżeli otrzymujesz tę wiadomość oznacza to, że już  ' + dataValid + ' Twoja karta członkowska straci ważność.</p> ' +
-      '<p> Twoim obowiązkiem jest opłacenie składki członkowskiej w powyższym terminie. Prosimy o niezwłoczne dokonanie opłaty poprzez system card.esn.pl.</p>' +
-      '<p> Brak uiszczonej w terminie składki będzie równał się odebraniu członkostwa zwyczajnego Stowarzyszenia ESN Polska.</p>' +
-      '<p> Wszelkie wątpliwości dotyczące płatności składki członkowskiej prosimy kierować na adres office@esn.pl. Prosimy również o nieodpowiadanie na tę wiadomość. <br/> Pozdrawiamy </p>' +
+      '<p>Twoim obowiązkiem jako członka zwyczajnego jest opłacenie składki w powyższym terminie. Prosimy o niezwłoczne dokonanie opłaty poprzez system card.esn.pl.<br/>' +
+      'Brak uiszczonej w terminie składki będzie równał się odebraniu członkostwa zwyczajnego Stowarzyszenia ESN Polska.</p>' +
+      '<p>Wszelkie wątpliwości dotyczące płatności składki członkowskiej prosimy kierować na adres office@esn.pl. Prosimy również o nieodpowiadanie na tę wiadomość. </p> <p> Pozdrawiamy </p>' +
     '</body>' ;
   
   return htmlIloscDni;
